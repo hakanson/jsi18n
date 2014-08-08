@@ -1,0 +1,34 @@
+{
+  "name": "jsi18n",
+  "version": "0.1.0",
+  "authors": [
+    "Kevin Hakanson"
+  ],
+  "description": "Demo site for Kevin Hakanson's \"Internationalize your JavaScript Application\" presentation",
+  "main": "demo.html",
+  "moduleType": [
+    "globals"
+  ],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular-bootstrap": "~0.11.0",
+    "angular-dynamic-locale": "~0.1.17",
+    "angular-i18n": "~1.2.20",
+    "angular-cookies": "~1.2.20",
+    "angular": "~1.2.20",
+    "angular-route": "~1.2.20",
+    "angular-translate": "~2.2.0",
+    "bootstrap-css-only": "~3.2.0",
+    "intl": "~0.1.4",
+    "jquery": "~2.1.1",
+    "globalize": "~0.1.1",
+    "messageformat": "~0.1.8"
+  }
+}

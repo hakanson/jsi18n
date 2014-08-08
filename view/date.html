@@ -1,0 +1,107 @@
+<div id="date">
+    <h1>Date ({{ language }})</h1>
+
+    <form class="form-horizontal" name="dateForm">
+        <div class="form-group">
+            <div class="col-sm-offset-2  col-sm-10">
+                <div class="btn-group" data-toggle="buttons-checkbox">
+                    <button type="button" class="btn btn-primary" ng-model="language" btn-radio="'en-us'">English (United States)</button>
+                    <button type="button" class="btn btn-primary" ng-model="language" btn-radio="'es-mx'">Español (México)</button>
+                    <button type="button" class="btn btn-primary" ng-model="language" btn-radio="'fr-ca'">Français (Canada)</button>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="form-group">
+            <span class="col-sm-2 control-label">AngularJS Format:</span>
+            <div class="col-sm-10">
+                <div class="btn-group" data-toggle="buttons-checkbox">
+
+                    <button type="button" class="btn btn-info" ng-model="dateformat" btn-radio="'medium'">medium</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat" btn-radio="'short'">short</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat" btn-radio="'fullDate'">fullDate</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat" btn-radio="'longDate'">longDate</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat" btn-radio="'mediumDate'">mediumDate</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat" btn-radio="'shortDate'">shortDate</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat" btn-radio="'mediumTime'">mediumTime</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat" btn-radio="'shortTime'">shortTime</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-sm-2 control-label">AngularJS Date:</span>
+            <div class="col-sm-10">
+                {{ then | date:dateformat }}
+                <!--
+                                <div class="well well-small pull-left" ng-model="then">
+                                    <datepicker></datepicker>
+                                </div>
+                -->
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="form-group" ng-show="language == 'en-us'">
+            <span class="col-sm-2 control-label">Intl Date:</span>
+            <div class="col-sm-10">
+                {{ then | dateIntl:dateformat }}
+            </div>
+        </div>
+
+        <hr ng-show="language == 'en-us'">
+
+        <div class="form-group">
+            <span class="col-sm-2 control-label">Globalize Format:</span>
+            <div class="col-sm-10">
+                <div class="btn-group" data-toggle="buttons-checkbox">
+
+                    <button type="button" class="btn btn-info" ng-model="dateformat2" btn-radio="'f'">f</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat2" btn-radio="'F'">F</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat2" btn-radio="'t'">t</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat2" btn-radio="'T'">T</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat2" btn-radio="'d'">d</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat2" btn-radio="'D'">D</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat2" btn-radio="'Y'">Y</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat2" btn-radio="'M'">M</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-sm-2 control-label">Globalize Date:</span>
+            <div class="col-sm-10">
+                {{ then2  }}
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="form-group">
+            <span class="col-sm-2 control-label">twitter-cldr-js Format:</span>
+            <div class="col-sm-10">
+                <div class="btn-group" data-toggle="buttons-checkbox">
+
+                    <button type="button" class="btn btn-info" ng-model="dateformat3" btn-radio="'full'">full</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat3" btn-radio="'long'">long</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat3" btn-radio="'medium'">medium</button>
+                    <button type="button" class="btn btn-info" ng-model="dateformat3" btn-radio="'short'">short</button>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <span class="col-sm-2 control-label">twitter-cldr-js Date:</span>
+            <div class="col-sm-10">
+                {{ then3  }}
+            </div>
+        </div>
+    </form>
+
+</div>

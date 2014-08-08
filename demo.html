@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="demo">
+<head>
+    <meta charset='utf-8'/>
+
+    <title>JavaScript Internationalization</title>
+
+    <link rel="stylesheet" href="demo.css">
+    <link rel="stylesheet" href="bower_components/bootstrap-css-only/css/bootstrap.css">
+</head>
+<body>
+<!-- Navbar -->
+<div class="navbar navbar-default navbar-fixed-top" ng-controller="NavCtrl">
+    <div class="navbar-inner">
+        <div class="container">
+            <a class="navbar-brand" href="#/">JavaScript Internationalization</a>
+            <ul class="nav navbar-nav">
+                <li ng-class="navClass('home')"><a href="#/">Home</a></li>
+                <li ng-class="navClass('character')"><a href="#/character">Character</a></li>
+                <li ng-class="navClass('number')"><a href="#/number">Number</a></li>
+                <li ng-class="navClass('date')"><a href="#/date">Date</a></li>
+                <li ng-class="navClass('bio')"><a href="#/bio">Biography</a></li>
+            </ul>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+
+        <!-- Dynamic content -->
+        <ng-view></ng-view>
+
+        <!-- http://localhost:63342/jsi18n/demo.html -->
+
+        <!-- file:///Users/U0038137/Dropbox/presentations/2014 JavaScript I18N/jsi18n/demo.html -->
+        <!-- open /Applications/Google\ Chrome.app/ --args --disable-web-security -->
+    </div>
+</div>
+
+<script type="text/javascript" src="//dl1d2m8ri9v3j.cloudfront.net/releases/1.2.1/tracker.js" data-customer="5f757afab9fb490ebccf7652596689ee"></script>
+<script src="bower_components/angular/angular.js"></script>
+<script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-cookies/angular-cookies.js"></script>
+
+
+<script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+<script src="bower_components/angular-translate/angular-translate.js"></script>
+
+<script src="bower_components/angular-dynamic-locale/src/tmhDynamicLocale.js"></script>
+
+<script src="bower_components/globalize/lib/globalize.js"></script>
+<script src="bower_components/globalize/lib/cultures/globalize.culture.en-US.js"></script>
+<script src="bower_components/globalize/lib/cultures/globalize.culture.es-MX.js"></script>
+<script src="bower_components/globalize/lib/cultures/globalize.culture.fr-CA.js"></script>
+
+<script src="bower_components/jquery/dist/jquery.js"></script>
+<script>
+    $.get( "cldr/main/en/ca-gregorian.json", Globalize.load );
+    $.get( "cldr/main/es/ca-gregorian.json", Globalize.load );
+    $.get( "cldr/main/fr/ca-gregorian.json", Globalize.load );
+
+    $.get( "cldr/supplemental/likelySubtags.json", Globalize.load );
+    $.get( "cldr/supplemental/timeData.json", Globalize.load );
+    $.get( "cldr/supplemental/weekData.json", Globalize.load );
+</script>
+
+<script src="bower_components/messageformat/messageformat.js"></script>
+<script src="bower_components/messageformat/locale/en.js"></script>
+<script src="bower_components/messageformat/locale/es.js"></script>
+<script src="bower_components/messageformat/locale/fr.js"></script>
+
+<script src="twitter_cldr/en.js"></script>
+
+<script>
+    if (!window.Intl) {
+        document.write('<script src=\"bower_components\/intl\/Intl.js\"><\/script>');
+        document.write('<script src=\"bower_components\/intl\/locale-data\/jsonp\/en-US.js\"><\/script>');
+        document.write('<script src=\"bower_components\/intl\/locale-data\/jsonp\/es-MX.js\"><\/script>');
+        document.write('<script src=\"bower_components\/intl\/locale-data\/jsonp\/fr-CA.js\"><\/script>');
+    }
+</script>
+
+<script src="demo.js"></script>
+</body>
+</html>
