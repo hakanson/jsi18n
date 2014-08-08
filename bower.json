@@ -5,7 +5,7 @@
     "Kevin Hakanson"
   ],
   "description": "Demo site for Kevin Hakanson's \"Internationalize your JavaScript Application\" presentation",
-  "main": "demo.html",
+  "main": "index.html",
   "moduleType": [
     "globals"
   ],
